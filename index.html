@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fifa King</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/core.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Fifa King</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+		<div class="step index">
+      		<div class="hero-unit new-tournament">
+        		<p>
+					<div>
+		    			<legend>New Tournament</legend>
+		    			<label>Name</label>
+		    			<input type="text" class="name" placeholder="The fifa king"/>
+		    
+						<div class="players">
+						<script id="player-template" type="text/x-handlebars-template">
+							<label>Teams</label>						
+							<ul>
+								{{#players}}
+									<li>{{name}}</li>
+								{{/players}}
+							</ul>
+							<div class="input-append">
+								<input type="text" class="player" placeholder="The mighty reds" />
+								<button class="btn add" type="button">Add Team</button>
+							</div>
+							<br>
+				    		<a href="#start" class="btn btn-primary start">Start Tournament</a>
+						</script>
+						</div>
+		    		</div>
+				</p>
+      		</div>
+
+      		<div class="row">
+		 		<div class="span4">
+	          		<h2>Fifa 3</h2>
+	          		<p>When: First Sunday in November<br>
+					Location: Muttas house</p>
+	        	</div>
+				<div class="span4">
+          			<h2>Cliff wins Fifa 2</h2>
+          			<p>With an anti climax due to the late finish and with some games not being played Cliff won after not conceding a goal during the 
+						group stages</p>
+       			</div>
+        		<div class="span4">
+          			<h2>Cliff wins Fifa 1</h2>
+          			<p>In a close final Cliff defeated Claude in the away leg by a couple of goals to take out the inaugural fifa king trophy.</p>
+        		</div>
+      		</div>
+		</div>
+
+		<div class="step tournament">
+			<div class="row">
+				<div class="span9">
+					<script id="tournament-template" type="text/x-handlebars-template">
+						<h1>{{name}}</h1>
+					
+						<legend>Ladder</legend>
+	
+						<div class="row header">
+							<div class="span1">						
+								Team
+							</div>
+							<div class="span1">						
+								Win
+							</div>
+							<div class="span1">						
+								Loss
+							</div>
+							<div class="span1">						
+								Draw
+							</div>
+							<div class="span1">						
+								For
+							</div>
+							<div class="span1">						
+								Against
+							</div>
+							<div class="span1">						
+								Points
+							</div>
+						</div>
+						
+						{{#ladder}}
+						<div class="row">
+							<div class="span1">						
+								{{name}}
+							</div>
+							<div class="span1">						
+								{{win}}
+							</div>
+							<div class="span1">						
+								{{loss}}
+							</div>
+							<div class="span1">						
+								{{draw}}
+							</div>
+							<div class="span1">						
+								{{goalsfor}}
+							</div>
+							<div class="span1">						
+								{{goalsagainst}}
+							</div>
+							<div class="span1">						
+								{{points}}
+							</div>
+						</div>
+						{{/ladder}}
+						
+						<div class="game form-inline"">
+							<legend>Add Game</legend>
+							<select class="player1">
+								{{#players}}
+									<option>{{name}}</option>
+								{{/players}}
+							</select>
+							<input type="number" class="input-mini score1" />
+							
+							vs
+							
+							<select class="player2">
+								{{#players}}
+									<option>{{name}}</option>
+								{{/players}}
+							</select>
+							<input type="number" class="input-mini score2"  />
+							
+							<button class="btn add" type="button">Add Result</button>
+						</div>
+					</script>
+	
+	        	</div>
+      		</div>
+		</div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Fifa King 2012</p>
+      </footer>
+
+    </div>
+
+	<script src="js/libs/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/underscore.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/backbone.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/handlebars.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/amplify.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/backbone.amplify.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/core.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
